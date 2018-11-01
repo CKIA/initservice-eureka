@@ -60,6 +60,35 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>org.apache.maven.plugins</groupId>-->
+				<!--<artifactId>maven-dependency-plugin</artifactId>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<id>copy-dependencies</id>-->
+						<!--<phase>package</phase>-->
+						<!--<goals>-->
+							<!--<goal>copy-dependencies</goal>-->
+						<!--</goals>-->
+						<!--<configuration>-->
+							<!--&lt;!&ndash;${project.build.directory} class的输出目录不做设置的话默认代表项目根目录的target目录；-->
+                                <!--也可以使用“自定义文件夹/自定义文件夹 例如：a/b”，也可以使用绝对路径如：“D:\test” &ndash;&gt;-->
+							<!--<outputDirectory>${project.build.directory}/../lib</outputDirectory>-->
+							<!--<excludeTransitive>false</excludeTransitive>-->
+							<!--<stripVersion>false</stripVersion>-->
+							<!--<includeScope>runtime</includeScope>-->
+						<!--</configuration>-->
+					<!--</execution>-->
+				<!--</executions>-->
+			<!--</plugin>-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<outputDirectory>${project.build.directory}/../lib</outputDirectory>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
